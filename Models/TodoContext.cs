@@ -1,0 +1,19 @@
+using Microsoft.EntityFrameworkCore;
+using System.Diagnostics.CodeAnalysis;
+
+
+namespace todoonboard_api.Models
+{
+    public class TodoContext : DbContext
+    {
+        public TodoContext(DbContextOptions<TodoContext> options)
+            : base(options)
+        {
+        }
+
+        public DbSet<Board> Boards { get; set; } = null!;
+        public DbSet<Todo> Todos { get; set; } = null!;
+        public DbSet<User> Users { get; set; } = null!;
+        
+    }
+}
